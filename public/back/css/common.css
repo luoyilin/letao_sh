@@ -1,0 +1,138 @@
+/* 登录页面的css 样式*/
+body{
+    background-color:black;
+}
+.box{
+    margin-top:100px;
+}
+
+.login{
+    margin-left:80px;
+}
+/*index.html 页面的css 样式*/
+.lt_aside{
+    width: 180px;
+    height: 100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background:#222D32;
+    z-index:999;
+    transition: all 1s;
+}
+.lt_aside.hidemenu{
+    left:-180px;
+}
+.lt_aside .title{
+    height: 50px;
+    line-height: 50px;
+    background-color:#367FA9;
+
+}
+.lt_aside .title a{
+    display: block;
+    text-align: center;
+    font-size:30px;
+    color:white;
+}
+.lt_aside .user{
+    height: 180px;
+    margin-top:30px;
+    text-align: center;
+}
+.lt_aside .user img{
+    display:block;
+    width: 80px;
+    height: 80px;
+    margin:0 auto;
+    border-radius: 50%;
+
+}
+.lt_aside .user p{
+    height: 40px;
+    color:white;
+    font-size:25px;
+
+}
+/*nav 部分开始*/
+a:link,
+a:active,
+a:visited,
+a:hover{
+    text-decoration: none;
+}
+.lt_aside .nav{
+    height:120px;
+}
+.lt_aside .nav li{
+    list-style: none;
+}
+
+.lt_aside .nav .child a{
+    display: block;
+    height:40px;
+    padding-left:30px;
+
+}
+.lt_aside .nav li a{
+    display:block;
+    height:40px;
+    color:white;
+}
+.lt_aside .nav li a .navs{
+    margin-left:5px;
+}
+/*右边主体部分*/
+.lt_main{
+    width: 100%;
+    height:1000px;
+    background:pink;
+    padding-left:180px;
+    transition: all 1s;
+}
+.lt_main.hidemenu{
+    padding-left:0px;
+}
+.lt_main .header{
+    height:50px;
+    width: 100%;
+    background:#3C8DBC;
+    padding-left:180px;
+    position:fixed;
+    top:0;
+    left:0;
+    transition: all 1s;
+}
+
+
+
+/*后加*/
+.lt_main .header.hidemenu{
+    padding-left:0px;
+}
+.lt_main .header .header_left,
+.lt_main .header .header_right{
+    width: 50px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+
+}
+.lt_main .header .header_left{
+    float: left;
+}
+.lt_main .header .header_right{
+    float: right;
+}
+.lt_main .header a i{
+    color:white;
+    font-size:20px;
+
+}
+/*右边主体部分的路径导航部分*/
+.lt_main .nav{
+    padding-top:50px;
+    margin:10px 4px;
+    
+}
+/*index.html页面的 图表部分的样式*/
