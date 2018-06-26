@@ -133,6 +133,14 @@ a:hover{
 .lt_main .nav{
     padding-top:50px;
     margin:10px 4px;
-    
+
 }
 /*index.html页面的 图表部分的样式*/
+.content .charts_left{
+     height:400px;
+     width: 48%;
+ }
+.content .charts_right{
+    height:400px;
+    width: 48%;
+}
