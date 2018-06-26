@@ -49,9 +49,9 @@
         </div>
     </table>
         <!--表格部分-->
-        <div class="lt_content">
+        <div class="container-fluid">
             <table class="table table-bordered table-hover">
-                <thead class="usersum">
+                <thead>
                 <tr>
                     <th width="10%">序号</th>
                     <th width="20%">手机名</th>
@@ -61,20 +61,38 @@
 
                 </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                <!--挖个坑-->
+                </tbody>
 
             </table>
             <!--dom 分页部分-->
             <div class="text-right">
-                <ul></ul>
+                <ul id="fenYe"></ul>
             </div>
 
         </div>
 
     </div>
-
+<div class="modal fade" id="logoutModal" tabindex="-1" >
+    <div class="modal-dialog modal-sm" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                <h4 class="modal-title" >温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                您确定要退出后台管理系统吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+            </div>
+        </div>
+    </div>
+</div>
     <!--模态框部分-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" >
+    <div class="modal fade" id="userModal" tabindex="-1" >
         <div class="modal-dialog modal-sm" >
             <div class="modal-content">
                 <div class="modal-header">
@@ -82,19 +100,26 @@
                     <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    您确定要退出后台管理系统吗？
+                    您确定要执行此操作吗？
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+                    <button type="button" class="btn btn-primary" id="submitBtn">确定</button>
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <!--js文件部分-->
     <script  src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <!--引入模版引擎插件-->
+   <script src="./lib/artTemplate/template-web.js"></script>
+    <!--引入分页插件-->
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 
     <!--引入进度条文件-->
     <script src="./lib/nprogress/nprogress.js"></script>
@@ -102,5 +127,28 @@
     <script src="./js/common.js"></script>
     <!--引入user页面的js文件-->
     <script src="./js/user.js"></script>
+        <script type="text/html" id="tpl">
+        {{ each rows v i}}
+        <tr>
+            <td> {{ i+1+(page-1)*size}}</td>
+            <td> {{ v.username}}</td>
+            <td> {{ v.mobile}}</td>
+            <td>
+                {{ if v.isDelete===1}}
+                正常
+                {{ else}}
+                禁用
+                {{ /if }}
+            </td>
+            <td data-id="{{ v.id }}" >
+            {{ if v.isDelete===1 }}
+                <button class="btn btn-danger" > 禁用 </button>
+                {{ else }}
+                <button class="btn btn-success"> 启用 </button>
+                {{ /if }}
+            </td>
+        </tr>
+            {{ /each }}
+        </script>
 </body>
 </html>
