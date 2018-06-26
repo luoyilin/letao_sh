@@ -32,7 +32,7 @@ body{
 .lt_aside .title a{
     display: block;
     text-align: center;
-    font-size:30px;
+    font-size:25px;
     color:white;
 }
 .lt_aside .user{
@@ -51,7 +51,7 @@ body{
 .lt_aside .user p{
     height: 40px;
     color:white;
-    font-size:25px;
+    font-size:18px;
 
 }
 /*nav 部分开始*/
@@ -143,4 +143,11 @@ a:hover{
 .content .charts_right{
     height:400px;
     width: 48%;
+}
+
+
+
+/*user页面的css 样式*/
+.lt_main .usersum{
+    width: 100%;
 }
