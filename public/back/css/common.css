@@ -86,7 +86,7 @@ a:hover{
 .lt_main{
     width: 100%;
     height:1000px;
-    background:pink;
+    background:white;
     padding-left:180px;
     transition: all 1s;
 }
@@ -106,7 +106,7 @@ a:hover{
 
 
 
-/*后加*/
+
 .lt_main .header.hidemenu{
     padding-left:0px;
 }
@@ -129,6 +129,16 @@ a:hover{
     font-size:20px;
 
 }
+/*模态框部分样式*/
+.modal i,
+.modal p{
+    color:red;
+}
+
+
+
+
+
 /*右边主体部分的路径导航部分*/
 .lt_main .nav{
     padding-top:50px;
@@ -147,4 +157,15 @@ a:hover{
 
 
 
-/*user页面的css 样式*/
+/*first页面的css 样式*/
+.mb_20{
+    margin-bottom: 20px;
+}
+.container-fluid .table{
+    text-align: center;
+}
+.table.table-bordered th,
+.table.table-bordered td{
+    text-align: center;
+    vertical-align: middle;
+}

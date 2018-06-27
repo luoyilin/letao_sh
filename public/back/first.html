@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <!--引入进度条css 文件-->
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="lt_aside">
+    <!--标题部分-->
+    <div class="title">
+        <a href="#">黑马21期</a>
+    </div>
+    <!--用户头像部分-->
+    <div class="user">
+        <img src="./images/02.jpg" alt="">
+        <p>超级管理员</p>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a  class="current" href="user.html"><i class="glyphicon glyphicon-user"></i><span class="navs">用户管理</span></a></li>
+            <li><a  class="category" href="javascript:;"><i class="glyphicon glyphicon-list"></i><span class="navs">分类管理</span></a>
+                <div class="child" style="display:none">
+                    <a href="first.html">一级分类</a>
+                    <a href="second.html">二级分类</a>
+                </div>
+            </li>
+            <li><a href="#"><i class="glyphicon glyphicon-tags"></i><span class="navs">商品管理</span></a></li>
+        </ul>
+    </div>
+</div>
+<!--右边主体内容-->
+<div class="lt_main">
+    <div class="header">
+        <div class="header_left "><a href="javascript:;"><i class="glyphicon glyphicon-align-justify"></i></a></div>
+        <div class="header_right"><a href="javascript:;"><i class="glyphicon glyphicon-log-out"></i></a></div>
+    </div>
+    <table class="container-fluid">
+        <div class="nav ">
+            <ol class="breadcrumb">
+                <li><a href="index.html">管理系统</a></li>
+                <li>用户管理</li>
+                <li>一级分类</li>
+
+            </ol>
+        </div>
+    </table>
+    <!--表格部分-->
+    <div class="container-fluid ">
+        <button class=" btn btn-default mb_20 " id="addBtn">添加分类</button>
+        <table class="table table-bordered table-hover  ">
+            <thead >
+            <tr >
+                <th width="20%">序号</th>
+                <th width="80%">一级分类名</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <!--挖个坑-->
+            </tbody>
+
+        </table>
+        <!--dom 分页部分-->
+        <div class="text-right">
+            <ul id="first_fenYe"></ul>
+        </div>
+
+    </div>
+
+</div>
+<!--公共部分的退出页面的模态框部分-->
+<div class="modal fade" id="logoutModal" tabindex="-1" >
+    <div class="modal-dialog modal-sm" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                <h4 class="modal-title" >温馨提示</h4>
+            </div>
+            <div class="modal-body">
+               <p class="red"> <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- first分类页面 模态框部分-->
+<div class="modal fade" id="firstModal" tabindex="-1" >
+    <div class="modal-dialog modal-sm" >
+        <div class="modal-content">
+            <form id="form">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+            </div>
+            <div class="modal-body">
+
+                    <div class="form-group">
+                        <!-- 此处  form 表单通过name 提交表单内容-->
+                        <input type="text"  name="categoryName" class="form-control" placeholder="请输入一级分类">
+                    </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary">添加</button>
+
+            </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!--js文件部分-->
+<script  src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!--引入模版引擎插件-->
+<script src="./lib/artTemplate/template-web.js"></script>
+<!--引入分页插件-->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+
+<!--引入进度条文件-->
+<script src="./lib/nprogress/nprogress.js"></script>
+<!--引入公共类js 文件-->
+<script src="./js/common.js"></script>
+<!--引入user页面的js文件-->
+<script src="./js/first.js"></script>
+<!--模版渲染部分-->
+<script type="text/html" id="first_tpl">
+{{ each rows v i }}
+<tr>
+    <td>{{ i+1+(page-1)*size }}</td>
+    <td>{{ v.categoryName }}</td>
+</tr>
+    {{ /each }}
+</script>
+
+</body>
+</html>
